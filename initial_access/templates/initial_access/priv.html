@@ -6,8 +6,8 @@
         {% for q in questions %}
         <div class="question">{{q.questions}}{{q.question}}</div>
         <div class="option">
-            <input type="radio" name="option">{{q.option_A}}</input>
-            <input type="radio" name="option">{{q.option_B}}</input>
+            <input type="radio" for="option">{{q.optionA}}</input>
+            <input type="radio" for="option">{{q.optionB}}</input>
         </div>
         {% endfor block %}
     </div>
