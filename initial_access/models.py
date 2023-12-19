@@ -3,8 +3,8 @@ from django.db import models
 class initaccess(models.Model):
     question_id = models.CharField(max_length=200)
     question=models.TextField(blank=True)
-    option_A=models.CharField(max_length=200)
-    option_B=models.CharField(max_length=200)
+    option_A=models.CharField(max_length=200,default='yes')
+    option_B=models.CharField(max_length=200,default='no')
 
     def __str__(self):
         return self.question_id
