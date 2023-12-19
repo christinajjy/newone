@@ -1,13 +1,15 @@
-{% extends 'base.html' %}
+{% extends 'initial_access/base.html' %}
 {% block content %}
 <h1>Questions part 1</h1>
 <form class="form-container">
     <div class="qblock">
-        <div class="question">{{q.question}}</div>
+        {% for q in questions %}
+        <div class="question">{{q.questions}}{{q.question}}</div>
         <div class="option">
             <input type="radio">{{q.optionA}}</input>
             <input type="radio">{{q.optionB}}</input>
         </div>
+        {% endfor block %}
     </div>
 
 </form>
