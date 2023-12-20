@@ -1,6 +1,7 @@
 from django.shortcuts import render
 from .models import initaccess
 from .models import privescalation
+from .models import commandcontrol
 import matplotlib.pyplot as plt
 from io import BytesIO
 import base64
@@ -26,6 +27,15 @@ def quiz2(request):
     return render(request,'initial_access/priv.html',{
         'quest': quest,
     })
+
+def quiz3(request):
+    qu = commandcontrol.objects.all()
+    return render(request,'initial_access/cac.html',{
+        'qu': qu,
+    })
+
+
+
 def result_init(request):
     # Fetching questions from the model
     questions = initaccess.objects.all()
