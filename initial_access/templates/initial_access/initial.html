@@ -9,11 +9,11 @@
         {% for q in questions %}
         <div class="question">{{q.questions}}{{q.question}}</div>
         <div class="option">
-            <input type="radio" name="{{q.question}}">{{q.option_A}}</input>
-            <input type="radio" name="{{q.question}}">{{q.option_B}}</input>
+            <input type="radio" name="{{q.question}}" value="option_A">{{q.option_A}}</input>
+            <input type="radio" name="{{q.question}}" value="option_B">{{q.option_B}}</input>
         </div>
-        {% endfor block %}
+        {% endfor %}
     </div>
-    <div><button type="submit" href="priv.html">Next</button></div>
+    <div><button type="submit">Next</button></div>
 </form>
 {% endblock %}
