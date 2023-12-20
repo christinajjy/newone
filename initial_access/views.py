@@ -8,6 +8,12 @@ import matplotlib
 from django.http import HttpResponseRedirect
 matplotlib.use('agg')
 
+def home(request):
+    return render(request, 'initial_access/index-2.html', {})
+
+def modules(request):
+    return render(request, 'initial_access/portfolio.html',{})
+
 def quiz1(request):
     questions = initaccess.objects.all()
     return render(request,'initial_access/initial.html',{
@@ -39,7 +45,7 @@ def result(request):
             elif option_B_value == question_value:
                 score-=10
                 wrong+=1
-        percent = 100 - ((score/10)/(total) *100)
+        percent = 100 - ((score)/(total*10) *100)
 
         
         labels = ['Complied', 'Not Complied']
@@ -74,24 +80,60 @@ def result(request):
             'question':question
         }
         return render(request,'initial_access/priv.html',context)
-<<<<<<< Updated upstream
 
-def start_quiz(request):
-    if request.method =='POST':
-        return HttpsResponseRedirect('initial_access/initial.html')
-    return render(request,"initial_access/quiz_list.html",{})
-def quiz1_button(request):
-    return render(request,'initial_access/priv.html',{})
-
-from django.shortcuts import render
-from django.http import HttpResponseRedirect
-
-def first_page(request):
+def result2(request):
     if request.method == 'POST':
-        # Redirect to another Django view
-        return HttpResponseRedirect('/q1/')  # Replace '/another-page/' with your desired URL
+        print(request.POST)
+        quest= privescalation.objects.all()
+        score=0
+        wrong=0
+        correct=0
+        total = quest.count()
+        for q in quest:
+            question_value= request.POST.get(q.question)
+            option_A_value = 'option_A'  # Use the correct form field name
+            option_B_value = 'option_B'
+            # Check if the selected option matches the correct option
+            if option_A_value == question_value:
+                score+=10
+                correct+=1
+            elif option_B_value == question_value:
+                score-=10
+                wrong+=1
+        if total == 0:
+            percent = float('nan')
+        else:
+            percent = 100 - ((score)/(total*10) *100)
 
-    return render(request, 'initial_access/initial.html')
-=======
-    
->>>>>>> Stashed changes
+        
+        labels = ['Complied', 'Not Complied']
+        sizes = [correct, wrong]
+        explode = (0.1, 0)  # explode 1st slice
+
+        fig1, ax1 = plt.subplots()
+        ax1.pie(sizes, explode=explode, labels=labels, autopct='%1.1f%%', shadow=True, startangle=90)
+        ax1.axis('equal')  # Equal aspect ratio ensures that pie is drawn as a circle
+
+        # Save the chart to a BytesIO buffer
+        chartBuffer = BytesIO()
+        plt.savefig(chartBuffer, format='png')
+        chartBuffer.seek(0)
+        chartData = base64.b64encode(chartBuffer.getvalue()).decode('utf-8')
+        plt.close()
+
+        context = {
+            'score':score,
+            'correct':correct,
+            'wrong':wrong,
+            'percent':percent,
+            'total':total,
+            'chart_data': chartData,
+        }
+        return render(request,'initial_access/result2.html',context)
+    else:
+        question=quiz1.objects.all()
+        context = {
+            'question':question
+        }
+        return render(request,'initial_access/priv.html',context)
+
