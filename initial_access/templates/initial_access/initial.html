@@ -3,7 +3,7 @@
 {% block content %}
 <h1>Questions part 1</h1>
 
-<form class="form-container" method="post" action="/result/">
+<form class="form-container" method="post" action="/result_init/">
     {% csrf_token %}
     <div class="qblock">
         {% for q in questions %}
