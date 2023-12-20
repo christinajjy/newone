@@ -5,6 +5,7 @@ class initaccess(models.Model):
     question=models.TextField(blank=True)
     option_A=models.CharField(max_length=200,default='yes')
     option_B=models.CharField(max_length=200,default='no')
+    keywords=models.TextField(blank=True)
 
     def __str__(self):
         return self.question_id
@@ -13,10 +14,8 @@ class initaccess(models.Model):
 class privescalation(models.Model):
     question_id = models.CharField(max_length=200)
     question=models.TextField(blank=True)
-    option_A=models.CharField(max_length=200)
-    option_B=models.CharField(max_length=200)
-    option_C=models.CharField(max_length=200)
-    option_D=models.CharField(max_length=200)
+    option_A=models.CharField(max_length=200,default='yes')
+    option_B=models.CharField(max_length=200,default='no')
     keywords=models.TextField(blank=True)
 
     def __str__(self):
@@ -25,10 +24,8 @@ class privescalation(models.Model):
 class credentialaccess(models.Model):
     question_id = models.CharField(max_length=200)
     question=models.TextField(blank=True)
-    option_A=models.CharField(max_length=200)
-    option_B=models.CharField(max_length=200)
-    option_C=models.CharField(max_length=200)
-    option_D=models.CharField(max_length=200)
+    option_A=models.CharField(max_length=200,default='yes')
+    option_B=models.CharField(max_length=200,default='no')
     keywords=models.TextField(blank=True)
 
     def __str__(self):
@@ -37,10 +34,8 @@ class credentialaccess(models.Model):
 class commandcontrol(models.Model):
     question_id = models.CharField(max_length=200)
     question=models.TextField(blank=True)
-    option_A=models.CharField(max_length=200)
-    option_B=models.CharField(max_length=200)
-    option_C=models.CharField(max_length=200)
-    option_D=models.CharField(max_length=200)
+    option_A=models.CharField(max_length=200,default='yes')
+    option_B=models.CharField(max_length=200,default='no')
     keywords=models.TextField(blank=True)
 
     def __str__(self):
