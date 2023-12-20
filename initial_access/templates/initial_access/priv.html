@@ -1,17 +1,49 @@
 {% extends 'initial_access/base.html' %}
+{% block css %}
+<style>
+.qblock{
+    padding: 20px;
+    margin: 10%;
+    background-color: #1e4356;
+    color: white;
+    border-radius: 20px;
+}
+input[type=radio]{
+      color:#2b607c;
+      width: 20px;
+      height: 20px;
+      font-weight: 20px;
+}
+
+.option{
+    padding: 10px;
+}
+input{
+    display: inline;
+}
+button{
+    background-color: white;
+    color: #1e4356;
+    border-radius: 5px;
+    border: none;
+    display: flex;
+    flex-wrap: center;
+}
+</style>
+{% endblock %}
 {% block content %}
-<h1>Questions part 2</h1>
-<form class="form-container">
+<h1>Private Escalation</h1>
+<form class="form-container" action="/result2/" method="post">
     {% csrf_token %}
     <div class="qblock">
         {% for q in quest %}
-        <div class="question">{{q.question_id}}{{q.question}}</div>
+        <div class="question">{{q.question_id}}.{{q.question}}</div>
         <div class="option">
-            <input type="radio" for="optionA">{{q.option_A}}</input>
-            <input type="radio" for="optionB">{{q.option_B}}</input>
+            <input type="radio" name="{{q.question}}" value="optionA">{{q.option_A}}</input>
+            <input type="radio" name="{{q.question}}" value="optionB">{{q.option_B}}</input>
         </div>
-        {% endfor block %}
+        {% endfor %}
     </div>
-
+    <div><button type="submit">Next</button></div>
 </form>
 {% endblock %}

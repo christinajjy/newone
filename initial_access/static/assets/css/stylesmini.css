@@ -1,0 +1,8 @@
+.qblock{
+    padding: 20px;
+    margin: 10%;
+    background-color: #2b607c;
+  }
+  input[type=radio]{
+      color:#2b607c;
+  }

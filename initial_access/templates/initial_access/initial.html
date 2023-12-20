@@ -1,19 +1,58 @@
 {% extends 'initial_access/base.html' %}
 {% load static %}
+{% block css %}
+<style>
+.qblock{
+    padding: 20px;
+    margin-left: 10%;
+    margin-right: 10%;
+    margin-top: 0;
+    background-color: #1e4356;
+    color: white;
+    border-radius: 20px;
+}
+input[type=radio]{
+      color:#2b607c;
+      width: 20px;
+      height: 20px;
+      font-weight: 20px;
+}
+
+.option{
+    padding: 10px;
+}
+input{
+    display: inline;
+}
+button{
+    background-color: white;
+    color: #1e4356;
+    border-radius: 5px;
+    border: none;
+    display: flex;
+    flex-wrap: center;
+}
+h1{
+    margin-top: 10%;
+    margin-bottom: 2%;
+    margin-left: 3%;
+}
+</style>
+{% endblock %}
 {% block content %}
-<h1>Questions part 1</h1>
+<h1>Initial Access</h1>
 
 <form class="form-container" method="post" action="/result_init/">
     {% csrf_token %}
     <div class="qblock">
         {% for q in questions %}
-        <div class="question">{{q.questions}}{{q.question}}</div>
+        <div class="question">{{q.question_id}}){{q.question}}</div>
         <div class="option">
             <input type="radio" name="{{q.question}}" value="option_A">{{q.option_A}}</input>
             <input type="radio" name="{{q.question}}" value="option_B">{{q.option_B}}</input>
         </div>
         {% endfor %}
+        <div><button type="submit">Next</button></div>
     </div>
-    <div><button type="submit">Next</button></div>
 </form>
 {% endblock %}

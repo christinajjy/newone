@@ -1,0 +1,218 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+  <title>Ransom Aware</title>
+  <meta content="" name="description">
+  <meta content="" name="keywords">
+
+  <!-- Favicons -->
+  <link href="static/assets/img/favicon.png" rel="icon">
+  <link href="static/assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Roboto:300,300i,400,400i,500,500i,700,700i&display=swap" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="static/assets/vendor/animate.css/animate.min.css" rel="stylesheet">
+  <link href="static/assets/vendor/aos/aos.css" rel="stylesheet">
+  <link href="static/assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="static/assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="static/assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+  <link href="static/assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+  <link href="static/assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+
+  <!-- Template Main CSS File -->
+  <link href="static/assets/css/style.css" rel="stylesheet">
+
+  <!-- =======================================================
+  * Template Name: Moderna
+  * Updated: Sep 18 2023 with Bootstrap v5.3.2
+  * Template URL: https://bootstrapmade.com/free-bootstrap-template-corporate-moderna/
+  * Author: BootstrapMade.com
+  * License: https://bootstrapmade.com/license/
+  ======================================================== -->
+</head>
+
+<body>
+
+  <!-- ======= Header ======= -->
+  <header id="header" class="fixed-top d-flex align-items-center header-transparent">
+    <div class="container d-flex justify-content-between align-items-center">
+
+      <div class="logo">
+        <h1 class="text-light"><a href="index.html"><span>Ransom Aware</span></a></h1>
+        <!-- Uncomment below if you prefer to use an image logo -->
+        <!-- <a href="index.html"><img src="assets/img/logo.png" alt="" class="img-fluid"></a>-->
+      </div>
+
+      <nav id="navbar" class="navbar">
+        <ul>
+          <li><a class="active " href="index.html">Home</a></li>
+        </ul>
+        <i class="bi bi-list mobile-nav-toggle"></i>
+      </nav><!-- .navbar -->
+
+    </div>
+  </header><!-- End Header -->
+
+  <!-- ======= Hero No Slider Section ======= -->
+  <section id="hero-no-slider" class="d-flex justify-cntent-center align-items-center">
+    <div class="container position-relative" data-aos="fade-up" data-aos-delay="100">
+      <div class="row justify-content-center">
+        <div class="col-xl-8">
+          <h2>Welcome to Ransom Aware</h2>
+          <p>To combat ransomware effectively, organizations must anticipate and thwart malicious behaviors,Our ransom awareness Simulation tool will find out how vulnerable your network is to common ransomware and cryptomining attacks.</p>
+          <a href="{% url 'modules' %}" class="btn-get-started ">Get Started</a>
+        </div>
+      </div>
+    </div>
+  </section><!-- End Hero No Slider Sectio -->
+
+  <main id="main">
+
+    <!-- ======= Services Section ======= -->
+    <section class="services">
+      <div class="container">
+
+        <div class="row">
+          <div class="col-md-6 col-lg-3 d-flex align-items-stretch" data-aos="fade-up">
+            <div class="icon-box icon-box-pink">
+              <div class="icon"><i class="bx bxl-dribbble"></i></div>
+              <h4 class="title"><a href="">Quiz Formats</a></h4>
+              <p class="description">Take this quiz and learn how to secure your digital life.</p>
+            </div>
+          </div>
+
+          <div class="col-md-6 col-lg-3 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="100">
+            <div class="icon-box icon-box-cyan">
+              <div class="icon"><i class="bx bx-file"></i></div>
+              <h4 class="title"><a href="">Sed ut perspiciatis</a></h4>
+              <p class="description">Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur</p>
+            </div>
+          </div>
+
+          <div class="col-md-6 col-lg-3 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="200">
+            <div class="icon-box icon-box-green">
+              <div class="icon"><i class="bx bx-tachometer"></i></div>
+              <h4 class="title"><a href="">Magni Dolores</a></h4>
+              <p class="description">Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum</p>
+            </div>
+          </div>
+
+          <div class="col-md-6 col-lg-3 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="200">
+            <div class="icon-box icon-box-blue">
+              <div class="icon"><i class="bx bx-world"></i></div>
+              <h4 class="title"><a href="">Nemo Enim</a></h4>
+              <p class="description">At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque</p>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section><!-- End Services Section -->
+
+    <!-- ======= Features Section ======= -->
+    <section class="features">
+      <div class="container">
+
+        <div class="section-title">
+          <h2>Features</h2>
+          </div>
+
+        <div class="row" data-aos="fade-up">
+          <div class="col-md-5">
+            <img src="static/assets/img/features-1.svg" class="img-fluid" alt="">
+          </div>
+          <div class="col-md-7 pt-4">
+            <h3>Quiz Format</h3>
+            <p class="fst-italic">
+              Ransomware terrorizes users and companies around the world, preventing access to data and demanding more and more money for its safe return. Take this quiz and learn how to secure your digital life. The following security awareness training quiz contains questions and answers designed to test and reinforce understanding of infosec fundamentals. By taking this quiz, 
+            </p>
+            <ul>
+              <li><i class="bi bi-check"></i> Get a baseline of cybersecurity knowledge, </li>
+              <li><i class="bi bi-check"></i> Uncover where employees need more training</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="row" data-aos="fade-up">
+          <div class="col-md-5 order-1 order-md-2">
+            <img src="static/assets/img/features-2.svg" class="img-fluid" alt="">
+          </div>
+          <div class="col-md-7 pt-5 order-2 order-md-1">
+            <h3>Corporis temporibus maiores provident</h3>
+            <p class="fst-italic">
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
+              magna aliqua.
+            </p>
+            <p>
+              Ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate
+              velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
+              culpa qui officia deserunt mollit anim id est laborum
+            </p>
+          </div>
+        </div>
+
+        <div class="row" data-aos="fade-up">
+          <div class="col-md-5">
+            <img src="static/assets/img/features-3.svg" class="img-fluid" alt="">
+          </div>
+          <div class="col-md-7 pt-5">
+            <h3>Sunt consequatur ad ut est nulla consectetur reiciendis animi voluptas</h3>
+            <p>Cupiditate placeat cupiditate placeat est ipsam culpa. Delectus quia minima quod. Sunt saepe odit aut quia voluptatem hic voluptas dolor doloremque.</p>
+            <ul>
+              <li><i class="bi bi-check"></i> Ullamco laboris nisi ut aliquip ex ea commodo consequat.</li>
+              <li><i class="bi bi-check"></i> Duis aute irure dolor in reprehenderit in voluptate velit.</li>
+              <li><i class="bi bi-check"></i> Facilis ut et voluptatem aperiam. Autem soluta ad fugiat.</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="row" data-aos="fade-up">
+          <div class="col-md-5 order-1 order-md-2">
+            <img src="static/assets/img/features-4.svg" class="img-fluid" alt="">
+          </div>
+          <div class="col-md-7 pt-5 order-2 order-md-1">
+            <h3>Quas et necessitatibus eaque impedit ipsum animi consequatur incidunt in</h3>
+            <p class="fst-italic">
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
+              magna aliqua.
+            </p>
+            <p>
+              Ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate
+              velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
+              culpa qui officia deserunt mollit anim id est laborum
+            </p>
+          </div>
+        </div>
+
+      </div>
+    </section><!-- End Features Section -->
+
+  </main><!-- End #main -->
+
+  <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+  <!-- Vendor JS Files -->
+  <script src="static/assets/vendor/purecounter/purecounter_vanilla.js"></script>
+  <script src="static/assets/vendor/aos/aos.js"></script>
+  <script src="static/assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="static/assets/vendor/glightbox/js/glightbox.min.js"></script>
+  <script src="static/assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+  <script src="static/assets/vendor/swiper/swiper-bundle.min.js"></script>
+  <script src="static/assets/vendor/waypoints/noframework.waypoints.js"></script>
+  <script src="static/assets/vendor/php-email-form/validate.js"></script>
+
+  <!-- Template Main JS File -->
+  <script src="static/assets/js/main.js"></script>
+
+</body>
+
+</html>
