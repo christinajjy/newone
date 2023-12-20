@@ -1,5 +1,18 @@
 {% extends 'initial_access/base.html' %}
+{% block css %}
+<style>
+main{
+    margin-top: 8%;
+    margin-left: 10%;
+    margin-right: 10%;
+}
+.card-body{
+    margin-left: 5%;
+}
+</style>
+{% endblock %}
 {% block content %}
+<main>
 <div class="container-result">
         
     <div class="card-columns" style="padding: 10px; margin: 20px;">
@@ -8,8 +21,7 @@
                 <h5 class="card-title">Score: {{score}}</h5>
                 <p class="card-text">Complied: {{correct}}</p>
                 <p class="card-text">Not Complied: {{wrong}}</p>
-                <p class="card-text"><bold>You are {{percent}}% likely to get phished!!</bold></p>
-                <h5>All the best for next quiz!</h5>
+                <p class="card-text"><bold>Your security level is at {{percent}}% !</bold></p>
             </div>
         </div>
     </div>
@@ -17,5 +29,8 @@
 <div class="card-body">    
     <img class="bar-chart" src="data:image/png;base64,{{ chart_image }}" alt="Bar Chart">
 </div>
-
+<div>
+    <button type="submit" value="Next Module"><a href="{% url 'priv_escalate' %}">Next Module</a></button>
+</div>
+</main>
 {% endblock %}

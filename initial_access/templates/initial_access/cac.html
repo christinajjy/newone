@@ -1,9 +1,12 @@
 {% extends 'initial_access/base.html' %}
+{% load static %}
 {% block css %}
 <style>
 .qblock{
     padding: 20px;
-    margin: 10%;
+    margin-left: 10%;
+    margin-right: 10%;
+    margin-top: 0;
     background-color: #1e4356;
     color: white;
     border-radius: 20px;
@@ -25,24 +28,31 @@ button{
     background-color: white;
     color: #1e4356;
     border-radius: 5px;
+    border: none;
     display: flex;
     flex-wrap: center;
+}
+h1{
+    margin-top: 10%;
+    margin-bottom: 2%;
+    margin-left: 3%;
 }
 </style>
 {% endblock %}
 {% block content %}
-<h1>Private Escalation</h1>
-<form class="form-container" action="/result_init/" method="post">
+<h1>Command and Control</h1>
+
+<form class="form-container" method="post" action="/result_init/">
     {% csrf_token %}
     <div class="qblock">
-        {% for q in quest %}
-        <div class="question">{{q.question_id}}.{{q.question}}</div>
+        {% for q in qu %}
+        <div class="question">{{q.question_id}}){{q.question}}</div>
         <div class="option">
-            <input type="radio" name="{{q.question}}" value="optionA">{{q.option_A}}</input>
-            <input type="radio" name="{{q.question}}" value="optionB">{{q.option_B}}</input>
+            <input type="radio" name="{{q.question}}" value="option_A">{{q.option_A}}</input>
+            <input type="radio" name="{{q.question}}" value="option_B">{{q.option_B}}</input>
         </div>
         {% endfor %}
+        <div><button type="submit">Next</button></div>
     </div>
-    <div><button type="submit">Next</button></div>
 </form>
 {% endblock %}
