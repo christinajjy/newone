@@ -8,13 +8,13 @@ import matplotlib
 from django.http import HttpResponseRedirect
 matplotlib.use('agg')
 
-def quiz1(request):
+def q1(request):
     questions = initaccess.objects.all()
     return render(request,'initial_access/initial.html',{
         'questions': questions,
     })
 
-def quiz2(request):
+def q2(request):
     quest = privescalation.objects.all()
     return render(request,'initial_access/priv.html',{
         'quest': quest,
@@ -28,20 +28,22 @@ def result(request):
         wrong=0
         correct=0
         total = question.count()
+        temp = total
         for q in question:
             question_value= request.POST.get(q.question)
             option_A_value = 'option_A'  # Use the correct form field name
             option_B_value = 'option_B'
             # Check if the selected option matches the correct option
             if option_A_value == question_value:
-                score+=10
+                score+=temp
                 correct+=1
             elif option_B_value == question_value:
-                score-=10
+                score-=temp
                 wrong+=1
-        percent = 100 - ((score/10)/(total) *100)
+            temp-=1
+            total+=temp
+        percent = ((score/total)*100)
 
-        
         labels = ['Complied', 'Not Complied']
         sizes = [correct, wrong]
         explode = (0.1, 0)  # explode 1st slice
@@ -57,8 +59,6 @@ def result(request):
         chart_data = base64.b64encode(chart_buffer.getvalue()).decode('utf-8')
         plt.close()
 
-
-
         context = {
             'score':score,
             'correct':correct,
@@ -69,17 +69,17 @@ def result(request):
         }
         return render(request,'initial_access/result.html',context)
     else:
-        question=quiz1.objects.all()
+        question=initaccess.objects.all()
         context = {
             'question':question
         }
         return render(request,'initial_access/priv.html',context)
-<<<<<<< Updated upstream
 
 def start_quiz(request):
     if request.method =='POST':
         return HttpsResponseRedirect('initial_access/initial.html')
     return render(request,"initial_access/quiz_list.html",{})
+
 def quiz1_button(request):
     return render(request,'initial_access/priv.html',{})
 
@@ -92,6 +92,3 @@ def first_page(request):
         return HttpResponseRedirect('/q1/')  # Replace '/another-page/' with your desired URL
 
     return render(request, 'initial_access/initial.html')
-=======
-    
->>>>>>> Stashed changes
