@@ -92,3 +92,20 @@ def first_page(request):
         return HttpResponseRedirect('/q1/')  # Replace '/another-page/' with your desired URL
 
     return render(request, 'initial_access/initial.html')
+
+from .models import responses
+from django.shortcuts import render
+ 
+def index(request):
+  magma_composition_data = [
+    {"label":"initial_access_result","symbol":"IAR","y":initial_access_result},
+    {"label":"privescalation_result","symbol":"PER","y":privescalation_result},
+    {"label":"credentialaccess_result","symbol":"CAR","y":credentialaccess_result},
+    {"label":"commandcontrol_result","symbol":"CCR","y":commandcontrol_result},
+    
+  ]
+ 
+  return render(request, 'index.html', { "magma_composition_data" : magma_composition_data })    
+
+
+

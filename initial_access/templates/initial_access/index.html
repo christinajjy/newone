@@ -1,0 +1,34 @@
+<!-- index.html -->
+{% load static %}
+<html>
+<head>
+<script>
+  window.onload = function () {
+    var chart = new CanvasJS.Chart("chartContainer",{
+      theme: "light2",
+      animationEnabled: true,
+      exportEnabled: true,
+      title: {
+        text: "Composition \u2800of Magma",
+        dockInsidePlotArea: true,
+        verticalAlign: "center",
+        maxWidth: 140,
+        fontSize: 22
+      },
+      data: [{
+        type: "doughnut",
+        indexLabel: "{label} - {y}",
+        yValueFormatString: "#,##0.0\"%\"",
+        startAngle: 90,
+        dataPoints: { magma_composition_data }
+      }]
+    });
+    chart.render();
+  }
+</script>    
+</head>
+<body>
+    <div id="chartContainer" style="width: 100%; height: 360px;"></div>
+    <script src="{% static 'canvasjs.min.js' %}"></script>
+</body>
+</html>      
