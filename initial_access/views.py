@@ -27,20 +27,22 @@ def result(request):
         score=0
         wrong=0
         correct=0
-        total=0
+        total = question.count()
         for q in question:
-            total+=1
-            print(request.POST.get(q.question))
-            if q.option_A ==  request.POST.get(q.question):
+            question_value= request.POST.get(q.question)
+            option_A_value = 'option_A'  # Use the correct form field name
+            option_B_value = 'option_B'
+            # Check if the selected option matches the correct option
+            if option_A_value == question_value:
                 score+=10
                 correct+=1
-            else:
+            elif option_B_value == question_value:
                 score-=10
                 wrong+=1
-        percent = 100 - (score/(total*10) *100)
+        percent = 100 - ((score/10)/(total) *100)
 
         
-        labels = ['Correct', 'Wrong']
+        labels = ['Complied', 'Not Complied']
         sizes = [correct, wrong]
         explode = (0.1, 0)  # explode 1st slice
 
@@ -72,6 +74,7 @@ def result(request):
             'question':question
         }
         return render(request,'initial_access/priv.html',context)
+<<<<<<< Updated upstream
 
 def start_quiz(request):
     if request.method =='POST':
@@ -89,3 +92,6 @@ def first_page(request):
         return HttpResponseRedirect('/q1/')  # Replace '/another-page/' with your desired URL
 
     return render(request, 'initial_access/initial.html')
+=======
+    
+>>>>>>> Stashed changes
