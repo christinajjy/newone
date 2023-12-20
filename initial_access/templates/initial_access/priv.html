@@ -1,13 +1,14 @@
 {% extends 'initial_access/base.html' %}
 {% block content %}
-<h1>Questions part 1</h1>
+<h1>Questions part 2</h1>
+{% crsf_token %}
 <form class="form-container">
     <div class="qblock">
-        {% for q in questions %}
-        <div class="question">{{q.questions}}{{q.question}}</div>
+        {% for q in quest %}
+        <div class="question">{{q.question_id}}{{q.question}}</div>
         <div class="option">
-            <input type="radio" for="option">{{q.optionA}}</input>
-            <input type="radio" for="option">{{q.optionB}}</input>
+            <input type="radio" for="optionA">{{q.option_A}}</input>
+            <input type="radio" for="optionB">{{q.option_B}}</input>
         </div>
         {% endfor block %}
     </div>
