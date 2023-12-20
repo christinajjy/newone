@@ -7,3 +7,4 @@ from .models import commandcontrol
 admin.site.register(initaccess)
 admin.site.register(privescalation)
 admin.site.register(credentialaccess)
+admin.site.register(commandcontrol)
