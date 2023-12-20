@@ -92,6 +92,3 @@ def first_page(request):
         return HttpResponseRedirect('/q1/')  # Replace '/another-page/' with your desired URL
 
     return render(request, 'initial_access/initial.html')
-
-
-
