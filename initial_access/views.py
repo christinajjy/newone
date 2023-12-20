@@ -5,6 +5,7 @@ import matplotlib.pyplot as plt
 from io import BytesIO
 import base64
 import matplotlib
+from django.http import HttpResponseRedirect
 matplotlib.use('agg')
 
 def quiz1(request):
@@ -71,3 +72,20 @@ def result(request):
             'question':question
         }
         return render(request,'initial_access/priv.html',context)
+
+def start_quiz(request):
+    if request.method =='POST':
+        return HttpsResponseRedirect('initial_access/initial.html')
+    return render(request,"initial_access/quiz_list.html",{})
+def quiz1_button(request):
+    return render(request,'initial_access/priv.html',{})
+
+from django.shortcuts import render
+from django.http import HttpResponseRedirect
+
+def first_page(request):
+    if request.method == 'POST':
+        # Redirect to another Django view
+        return HttpResponseRedirect('/q1/')  # Replace '/another-page/' with your desired URL
+
+    return render(request, 'initial_access/initial.html')

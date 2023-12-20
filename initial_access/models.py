@@ -40,3 +40,13 @@ class commandcontrol(models.Model):
 
     def __str__(self):
         return self.question_id
+    
+class responses(models.Model):
+    session_id = models.IntegerField()
+    initial_access_result = models.IntegerField()
+    privescalation_result = models.IntegerField()
+    credentialaccess_result = models.IntegerField()
+    commandcontrol_result = models.IntegerField()
+
+    def __str__(self):
+        return self.session_id
