@@ -41,35 +41,6 @@ class commandcontrol(models.Model):
     def __str__(self):
         return self.question_id
 
-class commandcontrol(models.Model):
-    question_id = models.CharField(max_length=200)
-    question=models.TextField(blank=True)
-    option_A=models.CharField(max_length=200,default='yes')
-    option_B=models.CharField(max_length=200,default='no')
-    keywords=models.TextField(blank=True)
-
-    def __str__(self):
-        return self.question_id
-
-class commandcontrol(models.Model):
-    question_id = models.CharField(max_length=200)
-    question=models.TextField(blank=True)
-    option_A=models.CharField(max_length=200,default='yes')
-    option_B=models.CharField(max_length=200,default='no')
-    keywords=models.TextField(blank=True)
-
-    def __str__(self):
-        return self.question_id
-
-class commandcontrol(models.Model):
-    question_id = models.CharField(max_length=200)
-    question=models.TextField(blank=True)
-    option_A=models.CharField(max_length=200,default='yes')
-    option_B=models.CharField(max_length=200,default='no')
-    keywords=models.TextField(blank=True)
-
-    def __str__(self):
-        return self.question_id
     
 class execution(models.Model):
     question_id = models.CharField(max_length=200)

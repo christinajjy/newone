@@ -39,11 +39,11 @@ h1{
 </style>
 {% endblock %}
 {% block content %}
-<h1>Private Escalation</h1>
-<form class="form-container" action="/result_init1/" method="post">
+<h1>Credential Access</h1>
+<form class="form-container" action="/result_init/" method="post">
     {% csrf_token %}
     <div class="qblock">
-        {% for q in quest %}
+        {% for q in ques %}
         <div class="question">{{q.question_id}}.{{q.question}}</div>
         <div class="option">
             <input type="radio" name="{{q.question}}" value="optionA">{{q.option_A}}</input>
